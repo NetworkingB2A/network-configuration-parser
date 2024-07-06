@@ -1,0 +1,17 @@
+---
+router11:
+  hostname: 192.168.2.11
+  groups: # group membership
+    - home_lab
+router12:
+  hostname: 192.168.2.12
+  groups: # group membership
+    - home_lab
+router18:
+  hostname: 192.168.2.18
+  groups: # group membership
+    - home_lab
+router19:
+  hostname: 192.168.2.19
+  groups: # group membership
+    - home_lab

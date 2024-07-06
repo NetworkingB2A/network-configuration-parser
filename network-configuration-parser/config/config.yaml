@@ -1,0 +1,7 @@
+---
+num_workers: 20
+inventory:
+  options:
+    host_file: network-configuration-parser/inventory/hosts.yaml
+    group_file: network-configuration-parser/inventory/groups.yaml
+    defaults_file: network-configuration-parser/inventory/defaults.yaml
