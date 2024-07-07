@@ -7,6 +7,7 @@ goal for project
 - Make adding to repo easy.
 - User inputs device and services they want to run they get command and parsed output back to them.
 
+
 Important for me
 - Create tests for code
 
@@ -35,7 +36,10 @@ Components
 Standards
 - .yaml is my yaml file extension
 
-Steps I follow
+## Future features
+- maybe have the inventory be a configuration file. Maybe that would be easier to use.
+
+## Steps I follow
 - Set up environment
   - set up github repo
   - install poetry
@@ -72,3 +76,22 @@ Steps I follow
 - started by creating a new module.
 - I found a example on the ntc-template docs I was able to use that. 
 - Init commit of project inbound. This is more or less a working solution basic solution for what I want.
+- I went down a rabbit hole about OOP a little bit. I understand teh concepts of oop and abstract base classes. But when to use those exact concepts at not as clear to me. 
+- I was listening to a audio book on a long drive the other day and the audio book said to use OOP When I want to hide the implementation details or when I need to group a large number of tasks together. I think that will become clear to me as I embark down this program.
+- I created my first basic task. then I created a little bit more complex task.
+- Next I need to figure out how to get the output from the first task and enter it into the second task.
+
+first nornir task
+def command_to_parse(task: Task, command: str):
+    return Result(
+        host=task.host,
+        result= f" command to run {command}"
+    )
+
+converted into
+
+def command_to_parse(task: Task, user_command: str, data: str = None):
+    data = '*22:58:52.913 UTC Sat Jul 6 2024'
+    version_parsed = parse_output(platform=task.host.platform, command=user_command, data=data)
+    return_result = Result(host=task.host, result = version_parsed)
+    return return_result
